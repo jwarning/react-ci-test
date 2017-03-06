@@ -1,13 +1,7 @@
-sudo: false
-language: node_js
-node_js:
-  - '6'
-cache:
-  yarn: true
-  directories:
-    - node_modules
+sudo: required
+services:
+  - docker
 notifications:
   email: false
 script:
-  - npm run test
-  - npm run build
+  - docker build -t react-ci-test .
