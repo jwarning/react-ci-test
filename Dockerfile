@@ -7,7 +7,8 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 # install dependencies
-RUN npm install --silent
+RUN npm install --silent \
+ && npm run build:dll
 
 # test and build app
 RUN npm run test \
