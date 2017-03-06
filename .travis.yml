@@ -1,7 +1,11 @@
 sudo: required
+language: node_js
+node_js:
+  - '7'
 services:
   - docker
 notifications:
   email: false
 script:
   - docker build -t react-ci-test .
+  - docker run -d -p 3000:3000 react-ci-test
